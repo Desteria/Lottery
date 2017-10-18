@@ -1,5 +1,6 @@
 package net.erbros.lottery;
 
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -9,6 +10,8 @@ import org.bukkit.Material;
 
 public class Etc
 {
+	private static NumberFormat format = NumberFormat.getCurrencyInstance();
+
 	public static String formatCost(double cost, LotteryConfig lConfig)
 	{
 		if (lConfig.useiConomy())
@@ -17,8 +20,7 @@ public class Etc
 		}
 		else
 		{
-			return String.valueOf(
-					(int)formatAmount(cost, lConfig.useiConomy())).concat(
+			return format.format(cost).concat(
 					" " + formatMaterialName(lConfig.getMaterial()));
 		}
 	}
