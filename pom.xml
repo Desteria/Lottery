@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>groupId</groupId>
+    <artifactId>Lottery</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <optional>true</optional>
+            <systemPath>${project.basedir}/lib/bukkit.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.earth2me.essentials</groupId>
+            <artifactId>Essentials</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/Essentials.jar</systemPath>
+            <version>2</version>
+        </dependency>
+        <dependency>
+            <groupId>cosine.boseconomy</groupId>
+            <artifactId>BOSEconomy</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/BOSEconomy.jar</systemPath>
+            <version>2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nijiko.coelho</groupId>
+            <artifactId>iConomy</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/iConomy v4.jar</systemPath>
+            <version>2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.iConomy</groupId>
+            <artifactId>iConomy</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/iConomy v5.jar</systemPath>
+            <version>2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.iCo6</groupId>
+            <artifactId>iConomy</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/iConomy v6.jar</systemPath>
+            <version>2</version>
+        </dependency>
+        <dependency>
+            <groupId>me.ashtheking.currency</groupId>
+            <artifactId>MultiCurrency</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/MultiCurrency.jar</systemPath>
+            <version>2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.milkbowl.vault</groupId>
+            <artifactId>Vault</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/Vault.jar</systemPath>
+            <version>2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <sourceDirectory>${basedir}/src/main/java/</sourceDirectory>
+        <finalName>${project.name}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>  <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>2.3</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <minimizeJar>false</minimizeJar>
+                        <createDependencyReducedPom>false</createDependencyReducedPom>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

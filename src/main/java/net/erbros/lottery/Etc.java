@@ -12,17 +12,8 @@ public class Etc
 {
 	private static NumberFormat format = NumberFormat.getCurrencyInstance();
 
-	public static String formatCost(double cost, LotteryConfig lConfig)
-	{
-		if (lConfig.useiConomy())
-		{
-			return lConfig.formatCurrency((formatAmount(cost, lConfig.useiConomy())));
-		}
-		else
-		{
-			return format.format(cost).concat(
-					" " + formatMaterialName(lConfig.getMaterial()));
-		}
+	public static String formatCost(double cost, LotteryConfig lConfig) {
+		return format.format(cost);
 	}
 
 	public static double formatAmount(double amount, final boolean usingiConomy)
